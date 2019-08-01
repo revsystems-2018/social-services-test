@@ -9,6 +9,10 @@ public interface RootTest {
 
     String getUserId();
 
+    String getResourceId();
+
     RequestSpecification request();
+
+    String getRegisterPath();
 
 }

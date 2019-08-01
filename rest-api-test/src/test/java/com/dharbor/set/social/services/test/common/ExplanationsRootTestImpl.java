@@ -1,7 +1,8 @@
 package com.dharbor.set.social.services.test.common;
 
+import com.dharbor.set.social.services.test.config.Constants;
+import com.dharbor.set.social.services.test.config.ServerConfig;
 import com.dharbor.set.social.services.test.explanations.ExplanationsRootTest;
-import com.dharbor.set.social.services.test.explanations.config.ExplanationsConfig;
 import com.dharbor.set.social.services.test.restassured.RestAssuredAdapter;
 import io.restassured.specification.RequestSpecification;
 
@@ -12,10 +13,10 @@ class ExplanationsRootTestImpl implements ExplanationsRootTest {
 
     private final BaseTestUser delegate;
 
-    public ExplanationsRootTestImpl(ExplanationsConfig explanationsConfig,
+    public ExplanationsRootTestImpl(ServerConfig serverConfig,
                                     RestAssuredAdapter restAssuredAdapter) {
 
-        delegate = new BaseTestUser(explanationsConfig) {
+        delegate = new BaseTestUser(serverConfig) {
             @Override
             RestAssuredAdapter adapter() {
                 return restAssuredAdapter;
@@ -39,10 +40,16 @@ class ExplanationsRootTestImpl implements ExplanationsRootTest {
     }
 
     @Override
+    public String getResourceId() {
+        return Constants.nextResourceId();
+    }
+
+    @Override
     public RequestSpecification request() {
         return delegate.request();
     }
 
+    @Override
     public String getRegisterPath() {
         return delegate.registerPath();
     }

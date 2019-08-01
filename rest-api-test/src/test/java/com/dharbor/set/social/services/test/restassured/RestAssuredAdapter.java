@@ -3,6 +3,7 @@ package com.dharbor.set.social.services.test.restassured;
 import com.dharbor.set.social.services.test.config.ServerConfig;
 import io.restassured.RestAssured;
 import io.restassured.specification.RequestSpecification;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -13,11 +14,8 @@ import javax.annotation.PostConstruct;
 @Component
 public class RestAssuredAdapter {
 
+    @Autowired
     private ServerConfig serverConfig;
-
-    public RestAssuredAdapter(ServerConfig serverConfig) {
-        this.serverConfig = serverConfig;
-    }
 
     public RequestSpecification given() {
         return RestAssured.given();

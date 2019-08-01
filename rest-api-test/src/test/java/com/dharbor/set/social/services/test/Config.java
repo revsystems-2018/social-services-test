@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @ComponentScan("com.dharbor.set.social.services.test")
 @Import({
+        com.dharbor.set.social.services.common.Application.class,
         com.dharbor.set.social.services.application.Config.class
 })
 //@EnableJUnitExtensions("com.dharbor.nexus.crm.rest.test")

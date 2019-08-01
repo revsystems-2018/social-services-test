@@ -21,12 +21,12 @@ import static org.springframework.test.context.TestExecutionListeners.MergeMode.
         }
 )
 @TestPropertySource(locations = "/application.properties")
-@TestExecutionListeners(
+/*@TestExecutionListeners(
         listeners = {
                 CustomTestListener.class
         },
         mergeMode = MERGE_WITH_DEFAULTS
-)
+)*/
 public abstract class CustomRuleTest {
 
     @ClassRule

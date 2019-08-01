@@ -26,11 +26,15 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
 
+        <junit.version>4.12</junit.version>
+        <rest-assured.version>4.0.0</rest-assured.version>
+
         <spring.version>5.0.0.RELEASE</spring.version>
         <identity.model.version>2.3.0-RC1</identity.model.version>
         <explanations.model.version>2.0.5</explanations.model.version>
         <chat.model.version>2.6.1-RC2</chat.model.version>
         <documents.model.version>2.0.5</documents.model.version>
+        <com.google.code.gson.version>2.3.1</com.google.code.gson.version>
 
         <set-nexus.snapshots.url>
             https://set-nexus.digitalharbor.us:8443/repository/maven-snapshots/
@@ -65,6 +69,14 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
