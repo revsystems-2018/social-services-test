@@ -1,8 +1,8 @@
 package com.dharbor.set.social.services.test.common;
 
-import com.dharbor.set.social.services.test.restassured.RestAssuredAdapter;
 import com.dharbor.set.social.services.test.explanations.ExplanationsRootTest;
 import com.dharbor.set.social.services.test.explanations.config.ExplanationsConfig;
+import com.dharbor.set.social.services.test.restassured.RestAssuredAdapter;
 import io.restassured.specification.RequestSpecification;
 
 /**
@@ -30,7 +30,7 @@ class ExplanationsRootTestImpl implements ExplanationsRootTest {
 
     @Override
     public void initialize() {
-
+        delegate.authenticate();
     }
 
     @Override
@@ -41,5 +41,9 @@ class ExplanationsRootTestImpl implements ExplanationsRootTest {
     @Override
     public RequestSpecification request() {
         return delegate.request();
+    }
+
+    public String getRegisterPath() {
+        return delegate.registerPath();
     }
 }

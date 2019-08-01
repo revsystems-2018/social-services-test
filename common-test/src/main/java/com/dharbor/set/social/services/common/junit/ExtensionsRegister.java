@@ -2,14 +2,12 @@ package com.dharbor.set.social.services.common.junit;
 
 import com.dharbor.set.social.services.common.annotation.EnableJUnitExtensions;
 import com.dharbor.set.social.services.common.annotation.ExecutionPriority;
-import com.dharbor.set.social.services.common.api.AbstractTest;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.core.type.AnnotationMetadata;
-import org.springframework.core.type.filter.AssignableTypeFilter;
 import org.springframework.util.ClassUtils;
 
 import java.util.Set;

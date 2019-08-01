@@ -2,15 +2,56 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <artifactId>social-services-test</artifactId>
         <groupId>com.dharbor.set.social.services</groupId>
         <version>1.0.0</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
     <artifactId>rest-api-test</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.dharbor.set.social.services</groupId>
+            <artifactId>common-test</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dharbor.set</groupId>
+            <artifactId>social.identity.model</artifactId>
+            <version>${identity.model.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dharbor.set</groupId>
+            <artifactId>social.explanations.model</artifactId>
+            <version>${explanations.model.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dharbor.set</groupId>
+            <artifactId>social.chat.model</artifactId>
+            <version>${chat.model.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dharbor.set</groupId>
+            <artifactId>social.documents.model</artifactId>
+            <version>${documents.model.version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 </project>

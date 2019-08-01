@@ -23,8 +23,36 @@
 	</parent>
 
 	<properties>
-		<java.version>1.8</java.version>
-	</properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+
+        <spring.version>5.0.0.RELEASE</spring.version>
+        <identity.model.version>2.3.0-RC1</identity.model.version>
+        <explanations.model.version>2.0.5</explanations.model.version>
+        <chat.model.version>2.6.1-RC2</chat.model.version>
+        <documents.model.version>2.0.5</documents.model.version>
+
+        <set-nexus.snapshots.url>
+            https://set-nexus.digitalharbor.us:8443/repository/maven-snapshots/
+        </set-nexus.snapshots.url>
+        <set-nexus.releases.url>
+            https://set-nexus.digitalharbor.us:8443/repository/maven-releases/
+        </set-nexus.releases.url>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 
 	<dependencies>
 		<dependency>
@@ -46,11 +74,44 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
+
+    <!-- SET repositories -->
+    <repositories>
+        <repository>
+            <id>set-nexus-snapshots</id>
+            <url>${set-nexus.snapshots.url}</url>
+        </repository>
+        <repository>
+            <id>set-nexus-releases</id>
+            <url>${set-nexus.releases.url}</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <!-- Publish the versioned releases here -->
+        <repository>
+            <id>set-nexus</id>
+            <name>set - nexus</name>
+            <url>${set-nexus.releases.url}</url>
+        </repository>
+
+        <!-- Publish the versioned snapshot here -->
+        <snapshotRepository>
+            <id>set-nexus</id>
+            <name>set - nexus</name>
+            <url>${set-nexus.snapshots.url}</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
