@@ -1,6 +1,5 @@
 package com.dharbor.set.social.services.test.explanations.cmd;
 
-import com.dharbor.set.social.services.application.domain.Explanation;
 import com.dharbor.set.social.services.application.request.ResourceRequest;
 import com.dharbor.set.social.services.application.wrapper.ExplanationWrapper;
 import com.dharbor.set.social.services.application.wrapper.ResourceExplanationRegistryWrapper;
@@ -18,13 +17,12 @@ import java.util.List;
 /**
  * @author rveizaga
  */
-
 @SynchronousExecution
 public class InitializeExplanationCmd implements CoreCommand {
 
     private RootTest root;
 
-    private ResourceRequest resourceRequest = new ResourceRequest();
+    private ResourceRequest resourceRequest;
 
     private ExplanationWrapper explanation;
 

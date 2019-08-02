@@ -11,8 +11,9 @@ public class Constants {
     public static final String RESOURCE_UUID = "resourceUUID";
 
     public static String nextResourceId() {
-        int aux = (int) (Math.random() * 5);
-        if (aux == 3) {
+        int index = (int) (Math.random() * 5);
+
+        if (index == 3) {
             return "-" + numberGenerator() + "_" + numberGenerator();
         }
         return numberGenerator() + "_" + numberGenerator();
@@ -27,27 +28,27 @@ public class Constants {
     }
 
     private static String numberGenerator() {
-        String res = "";
+        String result = "";
         String[] list = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
         for (int i = 0; i < 10; i++) {
-            int aux = (int) (Math.random() * 10);
-            if (i == 0 && aux == 0) {
-                res = res + "1";
+            int index = (int) (Math.random() * 10);
+            if (i == 0 && index == 0) {
+                result = result + "1";
             } else {
-                res = res.concat(list[aux]);
+                result = result.concat(list[index]);
             }
         }
-        return res;
+        return result;
     }
 
     private static String numberLetterGenerator(int size) {
-        String res = "";
+        String result = "";
         String[] list = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"};
 
         for (int i = 0; i < size; i++) {
-            int aux = (int) (Math.random() * 16);
-            res = res.concat(list[aux]);
+            int index = (int) (Math.random() * 16);
+            result = result.concat(list[index]);
         }
-        return res;
+        return result;
     }
 }

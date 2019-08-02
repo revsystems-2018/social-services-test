@@ -13,6 +13,5 @@ import org.springframework.context.annotation.Import;
         com.dharbor.set.social.services.common.Application.class,
         com.dharbor.set.social.services.application.Config.class
 })
-//@EnableJUnitExtensions("com.dharbor.nexus.crm.rest.test")
 public class Config {
 }

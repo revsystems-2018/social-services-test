@@ -1,8 +1,7 @@
 package com.dharbor.set.social.services.test.explanations.rest;
 
-import com.dharbor.set.social.services.application.wrapper.ExplanationWrapper;
 import com.dharbor.set.social.services.test.explanations.ExplanationsRootTest;
-import com.dharbor.set.social.services.test.explanations.cmd.InitializeExplanationCmd;
+import com.dharbor.set.social.services.test.explanations.cmd.CountExplanationCmd;
 import com.dharbor.set.social.services.test.restassured.CustomRuleTest;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,13 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * @author rveizaga
  */
-public class InitializeExplanationTest extends CustomRuleTest {
+public class CountExplanationTest extends CustomRuleTest {
 
     @Autowired
     private ExplanationsRootTest explanationsRootTest;
 
     @Autowired
-    private InitializeExplanationCmd command;
+    private CountExplanationCmd command;
 
     @Before
     public void setUp() {
@@ -26,11 +25,12 @@ public class InitializeExplanationTest extends CustomRuleTest {
     }
 
     @Test
-    public void createResourceExplanationTest() {
+    public void counterExplanationTest() {
         command.setRoot(explanationsRootTest);
         command.onExecute();
-        ExplanationWrapper explanation = command.getExplanation();
 
-        Assert.assertNotNull(explanation.getContent());
+        Object counter = command.getCounter();
+
+        Assert.assertNotNull(counter);
     }
 }

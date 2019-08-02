@@ -30,6 +30,7 @@
         <rest-assured.version>4.0.0</rest-assured.version>
 
         <spring.version>5.0.0.RELEASE</spring.version>
+        <social.common.response.version>2.1.1</social.common.response.version>
         <identity.model.version>2.3.0-RC1</identity.model.version>
         <explanations.model.version>2.0.5</explanations.model.version>
         <chat.model.version>2.6.1-RC2</chat.model.version>

@@ -23,6 +23,12 @@
 
         <dependency>
             <groupId>com.dharbor.set</groupId>
+            <artifactId>common.response</artifactId>
+            <version>${social.common.response.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dharbor.set</groupId>
             <artifactId>social.identity.model</artifactId>
             <version>${identity.model.version}</version>
         </dependency>
