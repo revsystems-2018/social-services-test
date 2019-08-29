@@ -31,7 +31,7 @@ public class BLCmdExecuteMethodInterceptor implements ApplicationContextAware {
     public void executeMethodAround(ProceedingJoinPoint joinPoint) throws Throwable {
         Object commandInstance = joinPoint.getTarget();
 
-        LOGGER.debug("Executing BusinessLogicCommand: '" + commandInstance.getClass() + "'");
+        LOGGER.debug("Executing CoreCommand: '" + commandInstance.getClass() + "'");
 
         Class<? extends CommandExecutorService> executorServiceClazz = loadExecutorServiceClazz(commandInstance);
 

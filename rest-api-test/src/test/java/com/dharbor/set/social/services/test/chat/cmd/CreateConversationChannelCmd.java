@@ -9,6 +9,7 @@ import com.dharbor.set.social.services.test.restassured.RootTest;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -32,7 +33,7 @@ public class CreateConversationChannelCmd implements CoreCommand {
                 .contentType(ContentType.JSON)
                 .body(channelRequest)
                 .expect()
-                .statusCode(200)
+                .statusCode(HttpServletResponse.SC_OK)
                 .when()
                 .post(root.getRegisterPath() + "/conversationChannels");
 

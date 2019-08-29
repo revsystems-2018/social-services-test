@@ -6,5 +6,4 @@ package com.dharbor.set.social.services.common.api;
 public interface CommandExecutorService {
 
     void onExecute(Work workItem) throws Throwable;
-
 }

@@ -29,6 +29,7 @@ public class InitializeExplanationTest extends CustomRuleTest {
     public void createResourceExplanationTest() {
         command.setRoot(explanationsRootTest);
         command.onExecute();
+
         ExplanationWrapper explanation = command.getExplanation();
 
         Assert.assertNotNull(explanation.getContent());

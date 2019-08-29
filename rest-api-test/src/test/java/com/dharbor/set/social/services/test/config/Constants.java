@@ -8,7 +8,6 @@ public class Constants {
     public static final String EMAIL = "email";
     public static final String PASSWORD = "password";
     public static final String APP_RESOURCE_ID = "appResourceId";
-    public static final String RESOURCE_UUID = "resourceUUID";
 
     public static String nextResourceId() {
         int index = (int) (Math.random() * 5);

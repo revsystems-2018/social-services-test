@@ -12,10 +12,6 @@ import org.apache.commons.lang3.RandomUtils;
  */
 public abstract class BaseTestUser extends AbstractTestUser {
 
-    private String accountId;
-
-    private String token;
-
     private SessionUserDTO sessionUserDTO;
 
     BaseTestUser(ServerConfig serverConfig) {

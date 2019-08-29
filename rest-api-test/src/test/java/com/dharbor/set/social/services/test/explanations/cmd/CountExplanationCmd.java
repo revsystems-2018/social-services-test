@@ -6,6 +6,8 @@ import com.dharbor.set.social.services.test.restassured.RootTest;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * @author rveizaga
  */
@@ -21,9 +23,10 @@ public class CountExplanationCmd implements CoreCommand {
         Response response = root.request()
                 .contentType(ContentType.JSON)
                 .expect()
-                .statusCode(200)
+                .statusCode(HttpServletResponse.SC_OK)
                 .when()
-                .get(root.getRegisterPath() + "/resources/" + root.getResourceId() + "/countExplanations");
+                .get(root.getRegisterPath() + "/resources/" +
+                        root.getResourceId() + "/countExplanations");
 
         counter = response.as(Object.class);
     }

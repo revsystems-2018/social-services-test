@@ -20,7 +20,7 @@ public class CountExplanationTest extends CustomRuleTest {
     private CountExplanationCmd command;
 
     @Before
-    public void setUp() {
+    public void initializeExplanation() {
         explanationsRootTest.initialize();
     }
 
